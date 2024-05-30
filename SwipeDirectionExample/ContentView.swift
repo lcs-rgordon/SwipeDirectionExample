@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct Fruit: Identifiable {
+// This could be a totally different structure in a different app
+// What is important is that the data type conforms to Identifiable and Hashable protocols
+struct Fruit: Identifiable, Hashable {
     let id = UUID()
     let name: String
 }
@@ -44,7 +46,7 @@ struct ContentView: View {
                 //
                 // index: holds the position of the current item in the array
                 // fruit: holds the current item in the array
-                ForEach(Array(zip(fruits.indices, fruits)), id: \.0) { index, fruit in
+                ForEach(Array(fruits.enumerated()), id: \.offset) { index, fruit in
                     
                     // Display the fruit
                     Text(fruit.name)
@@ -57,8 +59,12 @@ struct ContentView: View {
             // Always show the dots to indicate available pages
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
+            // What tab are we on?
             Text("Current tab index: \(currentTab)")
+            
+            // Which direction did we swipe?
             Text(swipeDirection)
+            
         }
         // This is triggered whenever the current tab changes
         .onChange(of: currentTab) { oldValue, newValue in
