@@ -65,9 +65,9 @@ struct ContentView: View {
             
             // Figure out what direction the swipe was
             if oldValue > newValue {
-                swipeDirection = "User swiped left."
-            } else {
                 swipeDirection = "User swiped right."
+            } else {
+                swipeDirection = "User swiped left."
             }
             
         }
