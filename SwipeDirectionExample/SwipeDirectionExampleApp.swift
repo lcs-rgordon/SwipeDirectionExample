@@ -11,7 +11,7 @@ import SwiftUI
 struct SwipeDirectionExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabViewBasedOnStaticViews()
         }
     }
 }

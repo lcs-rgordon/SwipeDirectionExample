@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TabViewBasedOnArray.swift
 //  SwipeDirectionExample
 //
 //  Created by Russell Gordon on 2024-05-30.
@@ -14,7 +14,7 @@ struct Fruit: Identifiable, Hashable {
     let name: String
 }
 
-struct ContentView: View {
+struct TabViewBasedOnArray: View {
     
     // MARK: Stored properties
     
@@ -80,5 +80,5 @@ struct ContentView: View {
     }
 }
 #Preview {
-    ContentView()
+    TabViewBasedOnArray()
 }
